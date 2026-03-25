@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de Avaliação de Carros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 Sistema de Classificação de Carros</h1>
+            <p class="subtitle">Avaliação automática baseada em Machine Learning</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2>Dados do Veículo</h2>
+                <form id="carForm">
+                    <div class="form-group">
+                        <label for="buying">Preço de Compra:</label>
+                        <select id="buying" name="buying" required>
+                            <option value="">Selecione...</option>
+                            <option value="vhigh">Muito Alto</option>
+                            <option value="high">Alto</option>
+                            <option value="med">Médio</option>
+                            <option value="low">Baixo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maint">Custo de Manutenção:</label>
+                        <select id="maint" name="maint" required>
+                            <option value="">Selecione...</option>
+                            <option value="vhigh">Muito Alto</option>
+                            <option value="high">Alto</option>
+                            <option value="med">Médio</option>
+                            <option value="low">Baixo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="doors">Número de Portas:</label>
+                        <select id="doors" name="doors" required>
+                            <option value="">Selecione...</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5more">5 ou mais</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="persons">Capacidade de Pessoas:</label>
+                        <select id="persons" name="persons" required>
+                            <option value="">Selecione...</option>
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="more">Mais de 4</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lug_boot">Tamanho do Porta-Malas:</label>
+                        <select id="lug_boot" name="lug_boot" required>
+                            <option value="">Selecione...</option>
+                            <option value="small">Pequeno</option>
+                            <option value="med">Médio</option>
+                            <option value="big">Grande</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="safety">Nível de Segurança:</label>
+                        <select id="safety" name="safety" required>
+                            <option value="">Selecione...</option>
+                            <option value="low">Baixo</option>
+                            <option value="med">Médio</option>
+                            <option value="high">Alto</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-text">Avaliar Carro</span>
+                        <span class="btn-loader" style="display: none;">⏳</span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="resultCard" class="card result-card" style="display: none;">
+                <h2>Resultado da Avaliação</h2>
+                <div id="resultContent"></div>
+            </div>
+
+            <div id="errorCard" class="card error-card" style="display: none;">
+                <h2>⚠️ Erro</h2>
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>MVP Sprint 2 - Engenharia de Software | PUC-Rio</p>
+            <p class="api-status">Status da API: <span id="apiStatus">Verificando...</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
